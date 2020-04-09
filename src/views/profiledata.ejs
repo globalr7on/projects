@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <style>
+        .result-container{
+            background-color:white;
+            margin: 16 px;
+            padding: 16 px;
+            border-radius: 5px;
+            border: solid 1px;
+        }
+        
+
+    </style>
+
+<head>
+    <meta charset="utf-8">
+    <title>Vista de Perfiles</title>
+    <% include partials/head %>
+    <% include partials/menu %>
+    
+</head>
+<hr>
+
+<body class="signup">
+    <div class="container">
+        <div class="col-sm-12 mx-auto">
+            <div class="card mt-5">
+                <div class="card-header">
+                    <h6 style="text-align: center;">Perfil del Usuario</h6>
+                </div>
+                <div class="card-body">
+                    <div class="card-body">
+                     <div>
+                         <div class="back-container">
+                            <% Profiles.forEach(p => { %>
+                                 <div class="result-container">
+                                  <div> ID: <%= p._id %></div>
+                                  <div> Nombre: <%= p.person.firstname %></div>
+                                  <div> Apellido: <%= p.person.lastname %></div>
+                                  <div> Telefono: <%= p.person.phonenumber %></div>
+                                  <div> Email: <%= p.person.emailadress %></div>
+                                  <div> Edad: <%= p.person.age %></div>
+                                  <div> País: <%= p.person.county %></div>
+                                  <div> Dirección: <%= p.person.address %></div>
+                                 </div>
+                            <% }) %>               
+                                 
+                    </div><br>
+                    
+                    <hr>
+                    <a href="/logout" class="btn btn-primary btn-block">
+                        Salir
+                    </a>
+                    <hr>
+                    <a href="/person" class="btn btn-primary btn-block">
+                        <span class="fa fa-user"></span> Registrar Nuevos
+                    </a>
+                    <a href="/persondata" class="btn btn-primary btn-block">
+                        <span class="fa fa-user"></span> Ver Registros
+                    </a>
+                    <a href="/profiledata" class="btn btn-primary btn-block">
+                        <span class="fa fa-user"></span> Ver Detalles
+                    </a>
+
+                </div>
+            </div>
+
+
+
+
+
+
+        </div>
+    </div>
+</body>
+<% include partials/scripts %>
+
+</html>

@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Registro Personas</title>
+    <% include partials/head %>
+    <% include partials/menu %>
+</head>
+<hr>
+
+<body class="signup">
+    <div class="container-fluid">
+        <div class="mx-auto">
+            <div class="card mt-5">
+                <div class="card-header">
+                    <h4 style="text-align: center;">Agregar Nuevo Plantador</h4>
+                </div>
+                <div class="card-body">
+                    <% if(message.lenght > 0) { %>
+                    <div class="alert alert-danger">
+                        <%= message %>
+                    </div>
+                    <% } %>
+                    <div class="card-header">
+                        <div class="container-fluid">
+                            <h5>Información Personal</h5>
+                            <form action="/profiledata" method="POST">
+                                <div class="form-group">
+                                    <label>Nombre</label>
+                                    <input type="person.firstname" name="person.firstname" class="form-control"
+                                        placeholder="Nombre" autofocus>
+                                </div>
+                                <div class="form-group">
+                                    <label>Apellido</label>
+                                    <input type="person.lastname" name="person.lastname" class="form-control"
+                                        placeholder="Apellido">
+                                </div>
+                                <div class="form-group">
+                                    <label>Fecha de Nacimiento</label>
+                                    <input type="date" name="person.birthday" class="form-control"
+                                        placeholder="Fecha de Nacimiento">
+                                </div>
+                                <div class="form-group">
+                                    <label>Edad</label>
+                                    <input type="person.age" name="person.age" class="form-control" placeholder="Edad">
+                                </div>
+                                <div class="form-group">
+                                    <label>Correo Electronico</label>
+                                    <input type="person.emailadress" name="person.emailadress" class="form-control"
+                                        placeholder="Correo Electrónico">
+                                </div>
+                                <label>Telefono</label>
+                                <div class="form-group">
+                                    <input type="person.phonenumber" name="person.phonenumber" class="form-control"
+                                        placeholder="Teléfono">
+                                </div>
+                                <label>Dirección</label>
+                                <div class="form-group">
+                                    <input type="person.address" name="person.address" class="form-control"
+                                        placeholder="Dirección">
+                                </div>
+                                <div class="form-group">
+                                    <label>Estado Civil</label>
+                                    <select type="person.civilstate" name="person.civilstate" class="form-control"
+                                        placeholder="Estado Civil">
+                                        <option>Estado Civil</option>
+                                        <option>Soltero</option>
+                                        <option>Casado</option>
+                                        <option>Divorciado</option>
+                                        <option>Viudo</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>Genero</label>
+                                    <select type="person.gender" name="person.gender" class="form-control">
+                                        <option>Genero</option>
+                                        <option>Masculino</option>
+                                        <option>Femenino</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>Ciudad</label>
+                                    <input type="person.city" name="person.city" class="form-control"
+                                        placeholder="Ciudad">
+                                </div>
+                                <div class="form-group">
+                                    <label>Provincia</label>
+                                    <input type="person.pronvince" name="person.pronvince" class="form-control"
+                                        placeholder="Provincia">
+                                </div>
+                                <div class="form-group">
+                                    <label>Pais</label>
+                                    <input type="person.county" name="person.county" class="form-control"
+                                        placeholder="País">
+                                </div>
+                                <div class="form-group">
+                                    <label>Numero de Hijos</label>
+                                    <input type="person.nsons" name="person.nsons" class="form-control"
+                                        placeholder="N° de Hijos">
+                                </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="card-header">
+                            <div class="container-fluid">
+                                <h5>Proyección del grupo a Iniciar</h5>
+                                <div class="form-group">
+                                    <label>Nombre del Grupo</label>
+                                    <input type="group.namechurch" name="group.namechurch" class="form-control"
+                                        placeholder="Nombre del grupo" autofocus>
+                                </div>
+                                <div class="form-group">
+                                    <label>Dirección</label>
+                                    <input type="group.address2" name="group.address2" class="form-control"
+                                        placeholder="Dirección del grupo" autofocus>
+                                </div>
+                                <div class="form-group">
+                                    <label>Ciudad</label>
+                                    <input type="group.city2" name="group.city2" class="form-control"
+                                        placeholder="Ciudad donde se establece" autofocus>
+                                </div>
+                                <div class="form-group">
+                                    <label>Provincia/Estado</label>
+                                    <input type="group.province2" name="group.province2" class="form-control"
+                                        placeholder="Provincia" autofocus>
+                                </div>
+                                <div class="form-group">
+                                    <label>Pais</label>
+                                    <input type="group.country2" name="group.country2" class="form-control"
+                                        placeholder="Pais" autofocus>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="card-header">
+                            <div class="container-fluid">
+                                <h5>Información Iglesia Madre</h5>
+                                <div class="form-group">
+                                    <label>Nombre de la Iglesia</label>
+                                    <input type="motherChurch.namechurchf" name="motherChurch.namechurchf"
+                                        class="form-control" placeholder="Nombre de la Iglesia Madre" autofocus>
+                                </div>
+                                <div class="form-group">
+                                    <label>Nombre del Pastor</label>
+                                    <input type="motherChurch.namef" name="motherChurch.namef" class="form-control"
+                                        placeholder="Nombre del Pastor" autofocus>
+                                </div>
+                                <div class="form-group">
+                                    <label>Nombre del Mentor</label>
+                                    <input type="motherChurch.namem" name="motherChurch.namem" class="form-control"
+                                        placeholder="Nombre del Mentor" autofocus>
+                                </div>
+                                <div class="form-group">
+                                    <label>Telefono</label>
+                                    <input type="motherChurch.phonenumberf" name="motherChurch.phonenumberf"
+                                        class="form-control" placeholder="Numero de Telefono" autofocus>
+                                </div>
+                                <div class="form-group">
+                                    <label>Correo Electronico</label>
+                                    <input type="motherChurch.emailadressf" name="motherChurch.emailadressf"
+                                        class="form-control" placeholder="Correo Electronico" autofocus>
+                                </div>
+                                <div class="form-group">
+                                    <label>Dirección</label>
+                                    <input type="motherChurch.addressf" name="motherChurch.addressf"
+                                        class="form-control" placeholder="Dirección Iglesia" autofocus>
+                                </div>
+                                <div class="form-group">
+                                    <label>Sector</label>
+                                    <input type="motherChurch.sector" name="motherChurch.sector" class="form-control"
+                                        placeholder="Sector" autofocus>
+                                </div>
+                                <div class="form-group">
+                                    <label>Ciudad</label>
+                                    <input type="motherChurch.cityf" name="motherChurch.cityf" class="form-control"
+                                        placeholder="Ciudad" autofocus>
+                                </div>
+                                <div class="form-group">
+                                    <label>Provincia/Estado</label>
+                                    <input type="motherChurch.pronvincef" name="motherChurch.pronvincef"
+                                        class="form-control" placeholder="Provincia" autofocus>
+                                </div>
+                                <div class="form-group">
+                                    <label>Pais</label>
+                                    <input type="motherChurch.countryf" name="motherChurch.countryf"
+                                        class="form-control" placeholder="Pais" autofocus>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="card-header">
+                            <div class="container-fluid">
+                                <h5>Testimonio Plantador </h5>
+                                <div class="form-group">
+                                    <label>¿Como era mi vida antes de conocer a Cristo</label>
+                                    <input type="testimony.question1" name="testimony.question1" class="form-control"
+                                        placeholder="Testimonio1" autofocus>
+                                </div>
+                                <div class="form-group">
+                                    <label>¿Como conocí a Cristo</label>
+                                    <input type="testimony.question2" name="testimony.question2" class="form-control"
+                                        placeholder="Testimonio2" autofocus>
+                                </div>
+                                <div class="form-group">
+                                    <label>¿Como es mi vida ahora que conocí a Cristo?</label>
+                                    <input type="testimony.question3" name="testimony.question3" class="form-control"
+                                        placeholder="Testimonio3" autofocus>
+                                </div>
+                                <div class="form-group">
+                                    <label>¿Como fue mi llamada a plantar Iglesias?</label>
+                                    <input type="testimony.question4" name="testimony.question4" class="form-control"
+                                        placeholder="Testimonio4" autofocus>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="card-header">
+                            <div class="container-fluid">
+                                <h5>Peticiones de Oración </h5>
+                                <div class="form-group">
+                                    <label>Peticiones</label>
+                                    <input type="requestPray.askpray" name="requestPray.askpray" class="form-control"
+                                        placeholder="Petición de Oracion" autofocus>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="card-header">
+                        <div class="container-fluid">
+                    <input type="submit"  class="btn btn-primary btn">
+                    <a href="/profile" class="btn btn-primary btn">
+                        <span class="fa fa-user"></span> Volver al Perfil
+                    </a>
+                    <a href="/persondata" class="btn btn-primary btn">
+                        <span class="fa fa-user"></span> Ver Registros
+                    </a>
+                    <a href="/profiledata" class="btn btn-primary btn">
+                        <span class="fa fa-user"></span> Ver Detalles
+                    </a>
+                    </div>
+                    </div>
+                    </form>
+                </div>
+    </div></div>
+    </div></div>
+</body>
+<% include partials/scripts %>
+
+</html>

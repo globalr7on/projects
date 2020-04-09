@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Login</title>
+    <% include partials/head %>
+</head>
+
+<body class="login">
+    <div class="container">
+        <div class="col-sm-8 mx-auto">
+            <div class="card mt-5">
+                <div class="card-header">
+                    Accede a tu Cuenta
+                </div>
+                <div class="card-body">
+
+                    <% if(message.lenght > 0) { %>
+                    <div class="alert alert-danger">
+                        <%= message %>
+                    </div>
+                    <% } %>
+
+                    <form action="/login" method="POST">
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" name="email" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" name="password" class="form-control">
+                        </div>
+                        <input type="submit" class="btn btn-primary btn-block">
+                    </form>
+
+                    <hr>
+                    <div class="text-center">
+                        <p>Necesitas una cuenta? <a href="/signup">Registrate</a></p>
+                        <p>volver a <a href="/">Presentación </a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

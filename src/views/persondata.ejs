@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Personas Registradas</title>
+  <% include partials/head %>
+  <% include partials/menu %>
+</head>
+<hr>
+<body class="signup">
+  <hr>
+  <hr>  
+
+  <div class="container-fluid">
+    <div class="col-sm-12 mx-auto ">
+      <div class="card mt-6">
+        <div class="card-header">
+          <h6 style="text-align: center;">Perfil Registrados</h6>
+        </div>
+        <div class="card-body">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">First</th>
+                <th scope="col">Last</th>
+                <th scope="col">Teléfono</th>
+                <th scope="col">Correo Electronico</th>
+                <th scope="col">Edad</th>
+                <th scope="col">Pais</th>
+                <th scope="col">Dirección</th>
+              </tr>
+            </thead>
+            <tbody>
+                <% for (var i = 0; i < Person_1.length; i++) { %>
+                   <tr>
+                      <td><%= i + 1 %></td>
+                      <td> <%= Person_1[i].person.firstname%></td>
+                      <td> <%= Person_1[i].person.lastname%></td>
+                      <td> <%= Person_1[i].person.phonenumber%></td>
+                      <td> <%= Person_1[i].person.emailadress%></td>
+                      <td> <%= Person_1[i].person.age%></td>
+                      <td> <%= Person_1[i].person.county%></td>
+                      <td> <%= Person_1[i].person.address%></td>
+
+                      
+                    </tr>
+                <% } %>               
+            </tbody>
+          </table>
+          <a href="/person" class="btn btn-primary btn-block">
+            <span class="fa fa-user"></span> Registrar Nuevos
+          </a>
+          <a href="/profile" class="btn btn-primary btn-block">
+            <span class="fa fa-user"></span> Volver al Perfil
+          </a>
+          <hr>
+          <a href="/logout" class="btn btn-primary btn-block">
+            Salir
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+<% include partials/scripts %>
+
+</html>

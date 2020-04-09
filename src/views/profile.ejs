@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Perfil</title>
+    <% include partials/head %>
+    <% include partials/menu %>
+</head>
+<hr>
+
+<body class="signup">
+    <div class="container">
+        <div class="col-sm-6 mx-auto">
+            <div class="card mt-5">
+                <div class="card-header">
+                    <h6 style="text-align: center;">Perfil del Usuario</h6>
+                </div>
+                <div class="card-body">
+                    <p>
+                        <strong>id</strong>: <%= user._id %> <br>
+                        <strong>email</strong>: <%= user.local.email %> <br>
+                        <strong>password</strong>: <%= user.local.password %>
+                    </p>
+                    <hr>
+                    <a href="/logout" class="btn btn-primary btn-block">
+                        Salir
+                    </a>
+                    <hr>
+                    <a href="/person" class="btn btn-primary btn-block">
+                        <span class="fa fa-user"></span> Registrar Nuevos
+                    </a>
+                    <a href="/persondata" class="btn btn-primary btn-block">
+                        <span class="fa fa-user"></span> Ver Registros
+                    </a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<% include partials/scripts %>
+
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title> Empresas Existentes</title>
+  <% include partials/head %>
+  <% include partials/menu %>
+</head>
+<hr>
+<body class="signup">
+  <hr>
+  <hr>
+  <div class="container">
+    <div class="col-sm-8 mx-auto ">
+      <div class="card mt-6">
+        <div class="card-header">
+          <h6 style="text-align: center;">Listado</h6>
+        </div>
+        <div class="card-body">
+          <table class="table table-striped ">
+            <thead>
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">RUT</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Email</th>
+                <th scope="col">Telefono</th>
+              </tr>
+            </thead>
+            <tbody>
+                <% for (var i = 0; i < Compa_1.length; i++) { %>
+                   <tr>
+                      <td><%= i + 1 %></td>
+                      <td> <%= Compa_1[i].rut%></td>
+                      <td> <%= Compa_1[i].name%></td>
+                      <td> <%= Compa_1[i].emailadress%></td>
+                      <td> <%= Compa_1[i].phonenumber%></td>
+                    </tr>
+                <% } %>               
+            </tbody>
+          </table>
+          
+        </div>
+        <a href="/compania" class="btn btn-primary btn-block">
+            <span class="fa fa-user"></span> Registrar Empresa
+          <a href="/logout" class="btn btn-primary btn-block">
+            Salir
+          </a>
+      </div>
+     
+    </div>
+  </div>
+</body>
+<% include partials/scripts %>
+
+</html>

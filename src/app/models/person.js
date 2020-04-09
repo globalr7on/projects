@@ -1,0 +1,43 @@
+const mongoose = require('mongoose');
+//const bodyParser = require('body-parser');
+
+const personSchema = new mongoose.Schema({
+    firstname: String,
+    lastname: String,
+    birthday: Date,
+    phonenumber: String,
+    address: String,
+    gender: String,
+    civilstate: String,
+    city: String,
+    province: String,
+    county: String,
+    postalcode: String,
+    emailadress: String,
+    nhijos: Number,
+    signsem:String,
+    signmen:String,
+    datereg: Date,
+    namechurch: String,
+    address2: String,
+    city2:String,
+    province2: String,
+    country2: String,
+    namechurchf: String,
+    namef: String,
+    namem:String, 
+    phonenumberf: String,
+    emailadressf: String,
+    addressf: String, 
+    sector:String, 
+    cityf: String,
+    provincef:String, 
+    countryf: String,
+    question1: String, 
+    Question2: String,
+    question3: String,
+    question4: String,
+    askpray: String,
+});
+
+module.exports = mongoose.model('Person', personSchema);
