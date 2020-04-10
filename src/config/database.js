@@ -1,3 +1,4 @@
 module.exports = {
-    'url': 'mongodb+srv://vramhdev:<Torvic2114>@cluster0-3wbqs.mongodb.net/test?retryWrites=true&w=majority'
+    'url': 'mongodb+srv://vramhdev:torvic2114@cluster0-3wbqs.mongodb.net/prodb?retryWrites=true&w=majority'
+    
 };
