@@ -37,15 +37,14 @@ module.exports = (app, passport) => {
             message: req.flash('signupMessage')
         });
     });
-    app.get('/cargo', (req, res) => {
-        res.render('cargo', {
-            message: req.flash('signupMessage')
-        });
+    app.get('/abc', (req, res) => {
+        
+        res.render('abc');
     });
-    app.get('/compania', (req, res) => {
-        res.render('compania', {
-            message: req.flash('signupMessage')
-        });
+
+    app.get('/actnac', (req, res) => {
+    
+        res.render('actnac');
     });
 
 /* GET Userlist page. */
@@ -82,50 +81,6 @@ app.get('/profiledata', async (req, res) =>{
         req.flash('Guardado')
         res.redirect('/persondata')
      });
-
-//---------------------------------------------------------
-
-//Modulo de Cargo -------------------------------------
-
-    const Cargos = require('./models/charge');
-
-    app.get('/chargeshow', async (req, res) => {
-        const Cargo_1 = await Cargos.find();
-        console.log(Cargo_1);
-        res.render('chargeshow', {
-            Cargo_1
-        });
-    });
-
-     app.post('/chargeshow', async (req, res) => {
-        const Cargo_2 = await new Cargos(req.body); 
-        Cargo_2.save();
-        req.flash('Guardado')
-        res.redirect('/chargeshow')
-     });
-
-//---------------------------------------------------------
-
-//Modulo de Compañia------------------------------------
-
-const Companies = require('./models/company');
-
-app.get('/companieshow', async (req, res) => {
-    const Compa_1 = await Companies.find();
-    console.log(Compa_1);
-    res.render('companieshow', {
-        Compa_1
-    });
-});
-
- app.post('/companieshow', async (req, res) => {
-    const Compa_2 = await new Companies(req.body); 
-    Compa_2.save();
-    req.flash('Guardado')
-    res.redirect('/companieshow')
- });
-
-//---------------------------------------------------------
 
     app.get('/logout', (req, res) => {
         req.logout();
