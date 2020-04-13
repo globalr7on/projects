@@ -1,5 +1,3 @@
 module.exports = {
-    'url': 'mongodb://localhost/prodb'//mongodb+srv://vramhdev:torvic2114@cluster0-3wbqs.mongodb.net/prodb?retryWrites=true&w=majority'
-    
-    
+    'url': 'mongodb+srv://hugodev:torvic2114@cluster0-gjqkr.mongodb.net/prodb?retryWrites=true&w=majority'
 };
