@@ -37,6 +37,14 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
 
+app.get('/app/:id', checkUserAuth, findApp, renderView, sendJSON);
+
+function checkUserAuth(req, res, next) {
+  if (req.session.user) return next();
+  return next(new NotAuthorizedError());
+}
+
+
 
 // routes 
 
