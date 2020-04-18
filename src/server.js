@@ -11,6 +11,16 @@ const bodyParser = require('body-parser');
 const session = require('express-session');
 const { url } = require('./config/database');
 
+// hacer storage para imagenes
+const storage = multer.diskStorage({
+    destination: './storage/imgs',
+    filename: function(req, file, cb){
+        cb(null, file.fieldname + '-' + Date.now() +
+        path.extname(file.originalname));
+    }
+})
+
+
 mongoose.Promise = global.Promise;
 mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(db => console.log('Base de datos esta corriendo correctamente...'))

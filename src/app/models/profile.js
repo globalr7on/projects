@@ -49,8 +49,7 @@ const profileSchema = new mongoose.Schema({
 
 
 profileSchema.methods.setImgUrl = function setImgUrl (filename) {
-    const { host, port } 
-    this.imgUrl = `${host}:${port}/public/${filename}`  
+    this.imgUrl = `/public/${filename}`  
 }
 
 
