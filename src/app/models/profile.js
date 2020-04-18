@@ -4,6 +4,7 @@ const profileSchema = new mongoose.Schema({
     person: {
         firstname: String,
         lastname: String,
+        imgUrl: String, 
         birthday: Date,
         age: Number,
         emailadress: String,
@@ -42,7 +43,16 @@ const profileSchema = new mongoose.Schema({
         question4: String,
     },   
     requestPray: {
-        askpray: String,
-    }      
+        askpray: String,    
+    }   
 });
+
+
+profileSchema.methods.setImgUrl = function setImgUrl (filename) {
+    const { host, port } 
+    this.imgUrl = `${host}:${port}/public/${filename}`  
+}
+
+
+
 module.exports = mongoose.model('Profile', profileSchema);
