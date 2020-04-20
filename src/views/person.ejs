@@ -6,6 +6,7 @@
     <title>Registro Personas</title>
     <% include partials/head %>
     <% include partials/menu %>
+    
 </head>
 <hr>
 
@@ -25,7 +26,8 @@
                     <div class="card-header">
                         <div class="container-fluid">
                             <h5>Información Personal</h5>
-                            <form action="/profiledata" method="POST">
+                            <%= typeof msg != 'undefined' ? msg: '' %>
+                            <form action="/profiledata" method="POST" enctype="multipart/form-data">
                                 <div class="form-group">
                                     <div class="custom-file">
                                         <label>Suba su Imagen</label>

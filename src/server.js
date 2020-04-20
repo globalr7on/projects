@@ -13,17 +13,38 @@ const { url } = require('./config/database');
 
 // hacer storage para imagenes
 const storage = multer.diskStorage({
-    destination: './storage/imgs',
-    filename: function(req, file, cb){
+    destination: './storage/imgs/',
+    filename: function(_req, file, cb){
         cb(null, file.fieldname + '-' + Date.now() +
         path.extname(file.originalname));
     }
 })
 
+//inicializar storage
+const upload = multer({
+    storage: storage,
+    limits:{fileSize: 1000000},
+    fileFilter: function(_req, file, cb){
+        checkFileType(file, cb);
+    }
+}).single('person.imgUrl');
+
+//check file Type
+function checkFileType(file, cb){
+    const filetypes= /jpeg|jpg|png|gif/;
+    const extname = filetypes.test(path.extname
+        (file.originalname).toLowerCase());
+    const mimetype = filetypes.test(file.mimetype);
+    if(mimetype && extname){
+        return cb(null, true);
+    }else {
+        cb('Error: Imagenes solamente ')
+    }
+}
 
 mongoose.Promise = global.Promise;
 mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true })
-    .then(db => console.log('Base de datos esta corriendo correctamente...'))
+    .then(_db => console.log('Base de datos esta corriendo correctamente...'))
     .catch(err => console.log(err));
 
 require('./config/passport')(passport);
