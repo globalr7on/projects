@@ -1,5 +1,5 @@
 const express = require('express');
-const multer = require('multer');
+//const multer = require('multer');
 const app = express();
 const path = require('path');
 const mongoose = require('mongoose');
@@ -40,42 +40,6 @@ app.use(passport.session());
 app.use(flash());
 
 // routes 
-
-// hacer storage para imagenes
-const storage = multer.diskStorage({
-    destination: './storage/imgs/',
-    filename: function(_req, file, cb){
-        cb(null, file.fieldname + '-' + Date.now() +
-        path.extname(file.originalname));
-    }
-})
-
-//inicializar storage
-const upload = multer({
-    storage: storage,
-    limits:{fileSize: 1000000},
-    fileFilter: function(_req, file, cb){
-        checkFileType(file, cb);
-    }
-}).single('person.imgUrl');
-
-//check file Type
-function checkFileType(file, cb){
-    const filetypes= /jpeg|jpg|png|gif/;
-    const extname = filetypes.test(path.extname
-        (file.originalname).toLowerCase());
-    const mimetype = filetypes.test(file.mimetype);
-    if(mimetype && extname){
-        return cb(null, true);
-    }else {
-        cb('Error: Imagenes solamente ')
-    }
-}
-
-
-//base routes
-
-
 // Guardar Personas o Clientes en mongodb
 
 
