@@ -48,9 +48,6 @@ require('./app/routes')(app, passport);
 // static files
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/public', express.static(`${__dirname}/storage/imgs`)) 
-
-
 app.listen(app.get('port'), () => {
     console.log('Server on port', app.get('port'));
 })

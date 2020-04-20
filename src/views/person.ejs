@@ -5,8 +5,7 @@
     <meta charset="utf-8">
     <title>Registro Personas</title>
     <% include partials/head %>
-    <% include partials/menu %>
-    
+    <% include partials/menu %>    
 </head>
 <hr>
 
@@ -27,13 +26,6 @@
                         <div class="container-fluid">
                             <h5>Información Personal</h5>
                             <form action="/profiledata" method="POST" enctype="multipart/form-data">
-                                <div class="form-group">
-                                    <div class="custom-file">
-                                        <label>Suba su Imagen</label>
-                                        <input type="file" class="custom-file-input" id="customFile"name="person.imgUrl">
-                                        <label class="custom-file-label" for="customFile">Seleccione su imagen</label>
-                                      </div>
-                                </div>
                                 <div class="form-group">
                                     <label>Nombre</label>
                                     <input type="person.firstname" name="person.firstname" class="form-control"
